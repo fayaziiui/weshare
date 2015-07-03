@@ -51,6 +51,14 @@
       "name": "loginView",
       "title": "Login",
       "addToNavigation": false
+    },
+    {
+      "type": "view",
+      "components": [],
+      "name": "clinicView",
+      "title": "Clinic",
+      "addToNavigation": true,
+      "icon": "home"
     }
   ],
   "dataProviders": [

@@ -1,1 +1,1 @@
-{"dependsOn":["generator-kendo-ui-mobile@0.0.7"],"generator-kendo-ui-mobile":{"cleanup":["./data/defaultProvider.js","./home","./loginView"]}}
+{"dependsOn":["generator-kendo-ui-mobile@0.0.7"],"generator-kendo-ui-mobile":{"cleanup":["./data/defaultProvider.js","./home","./loginView","./clinicView"]}}
