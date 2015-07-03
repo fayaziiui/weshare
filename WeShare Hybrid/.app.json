@@ -26,14 +26,6 @@
       "title": "Home",
       "addToNavigation": true,
       "icon": "home"
-    },
-    {
-      "type": "view",
-      "components": [],
-      "name": "homeView",
-      "title": "Home",
-      "addToNavigation": true,
-      "icon": "home"
     }
   ],
   "dataProviders": [
