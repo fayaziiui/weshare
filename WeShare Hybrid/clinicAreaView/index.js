@@ -1,5 +1,5 @@
 'use strict';
 
-app.clinicView = kendo.observable({
+app.clinicAreaView = kendo.observable({
     onShow: function() {}
 });
