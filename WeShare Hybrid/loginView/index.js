@@ -52,16 +52,16 @@ app.loginView = kendo.observable({
                 return true;
             },
             signin: function() {
-                
-                var model = loginViewModel,
-                    email = model.email.toLowerCase(),
-                    password = model.password;
+                 app.mobileApp.navigate('clinicView/view.html');
+             //  var model = loginViewModel,
+             //       email = model.email.toLowerCase(),
+             //       password = model.password;
 
-                if (!model.validateData(model)) {
-                    return false;
-                }
+             //   if (!model.validateData(model)) {
+             //       return false;
+             //   }
 
-                provider.Users.login(email, password, successHandler, init);
+             //   provider.Users.login(email, password, successHandler, init);
             },
             register: function() {
                 var model = loginViewModel,
