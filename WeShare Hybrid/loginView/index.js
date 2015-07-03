@@ -27,7 +27,7 @@ app.loginView = kendo.observable({
         },
         successHandler = function(data) {
             var redirect = mode === 'signin' ? signinRedirect : registerRedirect;
-
+ 
             if (data && data.result) {
                 app.user = data.result;
                 app.mobileApp.navigate(redirect + '/view.html');
@@ -49,19 +49,19 @@ app.loginView = kendo.observable({
                     alert('Missing password');
                     return false;
                 }
-
                 return true;
             },
             signin: function() {
-                var model = loginViewModel,
-                    email = model.email.toLowerCase(),
-                    password = model.password;
+                 app.mobileApp.navigate('clinicView/view.html');
+             //  var model = loginViewModel,
+             //       email = model.email.toLowerCase(),
+             //       password = model.password;
 
-                if (!model.validateData(model)) {
-                    return false;
-                }
+             //   if (!model.validateData(model)) {
+             //       return false;
+             //   }
 
-                provider.Users.login(email, password, successHandler, init);
+             //   provider.Users.login(email, password, successHandler, init);
             },
             register: function() {
                 var model = loginViewModel,
