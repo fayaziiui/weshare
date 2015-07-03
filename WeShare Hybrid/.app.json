@@ -3,18 +3,10 @@
   "views": [
     {
       "type": "view",
-      "components": [],
-      "name": "home",
-      "title": "Home",
-      "addToNavigation": true,
-      "icon": "home"
-    },
-    {
-      "type": "view",
       "components": [
         {
           "type": "authentication",
-          "name": "loginViewModel",
+          "name": "homeModel",
           "dataProvider": "defaultProvider",
           "emailLabel": "Email",
           "passwordLabel": "Password",
@@ -30,9 +22,10 @@
           "gotoSigninLabel": "Sign In"
         }
       ],
-      "name": "loginView",
-      "title": "Login",
-      "addToNavigation": false
+      "name": "home",
+      "title": "Home",
+      "addToNavigation": true,
+      "icon": "home"
     }
   ],
   "dataProviders": [
