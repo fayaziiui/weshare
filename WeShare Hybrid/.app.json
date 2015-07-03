@@ -57,8 +57,7 @@
       "components": [],
       "name": "clinicView",
       "title": "Clinic",
-      "addToNavigation": true,
-      "icon": "home"
+      "addToNavigation": false
     }
   ],
   "dataProviders": [

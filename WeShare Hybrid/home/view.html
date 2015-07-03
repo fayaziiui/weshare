@@ -1,23 +1,23 @@
-<div data-role="view" data-title="Login" data-layout="main-nonav" data-model="app.loginView" data-show="app.loginView.onShow">
+<div data-role="view" data-title="Home" data-layout="main" data-model="app.home" data-show="app.home.onShow">
     <div class="signin-view">
         <form>
             <ul data-role="listview" data-style="inset">
                 <li>
                     <label>Email
-                        <input type="email" data-bind="value: loginViewModel.email" required autofocus>
+                        <input type="email" data-bind="value: homeModel.email" required autofocus>
                     </label>
                 </li>
                 <li>
                     <label>Password
-                        <input type="password" data-bind="value: loginViewModel.password" required>
+                        <input type="password" data-bind="value: homeModel.password" required>
                     </label>
                 </li>
             </ul>
 
             <div class="button-group button-group-vertical">
-                <a data-role="button" class="km-state-active" data-bind="events: { click: loginViewModel.signin }">Sign In</a>
+                <a data-role="button" class="km-state-active" data-bind="events: { click: homeModel.signin }">Sign In</a>
 
-                <a data-role="button" data-bind="events: { click: loginViewModel.toggleView }">Register</a>
+                <a data-role="button" data-bind="events: { click: homeModel.toggleView }">Register</a>
 
             </div>
         </form>
@@ -27,23 +27,23 @@
             <ul data-role="listview" data-style="inset">
                 <li>
                     <label>Email
-                        <input type="email" data-bind="value: loginViewModel.email" required>
+                        <input type="email" data-bind="value: homeModel.email" required>
                     </label>
                 </li>
                 <li>
                     <label>Password
-                        <input type="password" data-bind="value: loginViewModel.password">
+                        <input type="password" data-bind="value: homeModel.password">
                     </label>
                 </li>
                 <li>
                     <label>Name
-                        <input type="text" data-bind="value: loginViewModel.displayName">
+                        <input type="text" data-bind="value: homeModel.displayName">
                     </label>
                 </li>
             </ul>
             <div class="button-group button-group-vertical">
-                <a class="km-state-active" data-role="button" data-bind="events: { click: loginViewModel.register }">Register</a>
-                <a data-role="button" data-bind="events: { click: loginViewModel.toggleView }">Sign In</a>
+                <a class="km-state-active" data-role="button" data-bind="events: { click: homeModel.register }">Register</a>
+                <a data-role="button" data-bind="events: { click: homeModel.toggleView }">Sign In</a>
             </div>
         </form>
     </div>
