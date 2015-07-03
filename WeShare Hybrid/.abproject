@@ -1,0 +1,48 @@
+{
+  "ProjectName": "WeShare Hybrid",
+  "ProjectGuid": "d887ddaf-9797-4c3c-838a-c1be0eab7179",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.WeShareHybrid",
+  "DisplayName": "WeShare Hybrid",
+  "Author": "",
+  "Description": "WeShare Hybrid",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.7.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{f640dc19-b84a-46fa-a263-4f12634e89f0}",
+  "WP8ProductID": "{89b52ed6-8363-4a40-ad76-cd47df4dbfc5}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.WeShareHybrid",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "org.apache.cordova.network-information"
+  ]
+}
