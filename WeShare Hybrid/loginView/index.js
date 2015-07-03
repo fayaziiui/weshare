@@ -1,6 +1,6 @@
 'use strict';
 
-app.home = kendo.observable({
+app.loginView = kendo.observable({
     onShow: function() {}
 });
 (function(parent) {
@@ -35,7 +35,7 @@ app.home = kendo.observable({
                 init();
             }
         },
-        homeModel = kendo.observable({
+        loginViewModel = kendo.observable({
             displayName: '',
             email: '',
             password: '',
@@ -53,7 +53,7 @@ app.home = kendo.observable({
                 return true;
             },
             signin: function() {
-                var model = homeModel,
+                var model = loginViewModel,
                     email = model.email.toLowerCase(),
                     password = model.password;
 
@@ -64,7 +64,7 @@ app.home = kendo.observable({
                 provider.Users.login(email, password, successHandler, init);
             },
             register: function() {
-                var model = homeModel,
+                var model = loginViewModel,
                     email = model.email.toLowerCase(),
                     password = model.password,
                     displayName = model.displayName,
@@ -85,8 +85,8 @@ app.home = kendo.observable({
             }
         });
 
-    parent.set('homeModel', homeModel);
+    parent.set('loginViewModel', loginViewModel);
     parent.set('onShow', function() {
         provider.Users.currentUser().then(successHandler, init);
     });
-})(app.home);
+})(app.loginView);
