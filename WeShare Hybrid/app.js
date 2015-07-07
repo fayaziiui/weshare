@@ -13,6 +13,7 @@
                 transition: 'slide',
                 // the application needs to know which view to load first
                 initial: 'loginView/view.html',
+                //initial: 'clinicView/view.html',
                 statusBarStyle: 'black-translucent'
             });
         });
