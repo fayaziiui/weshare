@@ -60,11 +60,9 @@ app.loginView = kendo.observable({
                     return false;
                 }
 
-                if (!authenticateUser(email, password)) {
-                    alert("Invalid UserName Or Password!.");
-                }
+                if (authenticateUser(email, password)) app.mobileApp.navigate('clinicView/view.html');
+                else alert("Invalid UserName Or Password!.");
 
-                app.mobileApp.navigate('clinicView/view.html');
                 //   provider.Users.login(email, password, successHandler, init);
             },
             register: function () {
@@ -96,31 +94,24 @@ app.loginView = kendo.observable({
 })(app.loginView);
 
 function authenticateUser(userName, password) {
-
-    alert(userName + ' ' + password);
+    //  alert(userName + ' ' + password);
+    var result = false;
     $.ajax({
-         async: false,
+        async: false,
         url: "http://localhost:46702/Home/Login",
         data: {
             UserName: userName,
             Password: password,
         },
-       // dataType: "json",
+        // dataType: "json",
         type: "POST",
         success: function (data) {
-             alert(data);
-            if (data.Success) {
-                
-                alert('success');
-                // $msg.hide();
-                // app.navigate("");
-            } else {
-                alert('failed');
-                //  $msg.html(data.Message).show();
-            }
+            // alert(data);
+            if (data == true) result = true;
         },
         error: function (xhr, status, error) {
-          // alert(xhr.responseText)
+            alert(xhr.responseText)
         }
     });
+    return result;
 }
