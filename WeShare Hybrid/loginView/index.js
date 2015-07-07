@@ -1,14 +1,14 @@
 'use strict';
 
 app.loginView = kendo.observable({
-    onShow: function() {}
+    onShow: function () {}
 });
-(function(parent) {
+(function (parent) {
     var provider = app.data.defaultProvider,
         mode = 'signin',
         registerRedirect = 'home',
         signinRedirect = 'home',
-        init = function(error) {
+        init = function (error) {
             if (error) {
                 if (error.message) {
                     alert(error.message);
@@ -25,9 +25,9 @@ app.loginView = kendo.observable({
                 $(activeView).show().siblings().hide();
             }
         },
-        successHandler = function(data) {
+        successHandler = function (data) {
             var redirect = mode === 'signin' ? signinRedirect : registerRedirect;
- 
+
             if (data && data.result) {
                 app.user = data.result;
                 app.mobileApp.navigate(redirect + '/view.html');
@@ -39,7 +39,7 @@ app.loginView = kendo.observable({
             displayName: '',
             email: '',
             password: '',
-            validateData: function(data) {
+            validateData: function (data) {
                 if (!data.email) {
                     alert('Missing email');
                     return false;
@@ -51,19 +51,19 @@ app.loginView = kendo.observable({
                 }
                 return true;
             },
-            signin: function() {
-                 app.mobileApp.navigate('clinicView/view.html');
-             //  var model = loginViewModel,
-             //       email = model.email.toLowerCase(),
-             //       password = model.password;
+            signin: function () {
+                app.mobileApp.navigate('clinicView/view.html');
+                //  var model = loginViewModel,
+                //       email = model.email.toLowerCase(),
+                //       password = model.password;
 
-             //   if (!model.validateData(model)) {
-             //       return false;
-             //   }
+                //   if (!model.validateData(model)) {
+                //       return false;
+                //   }
 
-             //   provider.Users.login(email, password, successHandler, init);
+                //   provider.Users.login(email, password, successHandler, init);
             },
-            register: function() {
+            register: function () {
                 var model = loginViewModel,
                     email = model.email.toLowerCase(),
                     password = model.password,
@@ -79,14 +79,14 @@ app.loginView = kendo.observable({
 
                 provider.Users.register(email, password, attrs, successHandler, init);
             },
-            toggleView: function() {
+            toggleView: function () {
                 mode = mode === 'signin' ? 'register' : 'signin';
                 init();
             }
         });
 
     parent.set('loginViewModel', loginViewModel);
-    parent.set('onShow', function() {
+    parent.set('onShow', function () {
         provider.Users.currentUser().then(successHandler, init);
     });
 })(app.loginView);

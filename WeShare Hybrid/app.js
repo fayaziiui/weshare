@@ -1,12 +1,12 @@
-(function() {
+(function () {
     // store a reference to the application object that will be created
     // later on so that we can use it if need be
     var app = {
         data: {}
     };
 
-    var bootstrap = function() {
-        $(function() {
+    var bootstrap = function () {
+        $(function () {
             app.mobileApp = new kendo.mobile.Application(document.body, {
 
                 // you can change the default transition (slide, zoom or fade)
@@ -21,7 +21,7 @@
 
     if (window.cordova) {
         // this function is called by Cordova when the application is loaded by the device
-        document.addEventListener('deviceready', function() {
+        document.addEventListener('deviceready', function () {
             // hide the splash screen as soon as the app is ready. otherwise
             // Cordova will wait 5 very long seconds to do it for you.
             if (navigator && navigator.splashscreen) {
@@ -36,7 +36,7 @@
 
     window.app = app;
 
-    app.isOnline = function() {
+    app.isOnline = function () {
         if (!navigator || !navigator.connection) {
             return true;
         } else {
