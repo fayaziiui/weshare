@@ -1,5 +1,9 @@
 'use strict';
 
+var globalmodel = kendo.observable({
+    username:''
+});
+
 app.loginView = kendo.observable({
     onShow: function () {}
 });
@@ -59,7 +63,10 @@ app.loginView = kendo.observable({
                     return false;
                 }
 
-                if (authenticateUser(email, password)) app.mobileApp.navigate('clinicView/view.html');
+                if (AuthenticateUser(email, password)) {
+                    globalmodel.username=email;
+                    app.mobileApp.navigate('clinicView/view.html');
+                }
                 else alert("Invalid UserName Or Password!.");
 
                 //   provider.Users.login(email, password, successHandler, init);
@@ -84,7 +91,7 @@ app.loginView = kendo.observable({
                 mode = mode === 'signin' ? 'register' : 'signin';
                 init();
             }
-        });
+        }); 
 
     parent.set('loginViewModel', loginViewModel);
     parent.set('onShow', function () {
@@ -92,13 +99,13 @@ app.loginView = kendo.observable({
     });
 })(app.loginView);
 
-function authenticateUser(userName, password) {
+function AuthenticateUser(userName, password) {
     //  alert(userName + ' ' + password);
     var result = false;
     $.ajax({
         async: false,
-        //url: "http://localhost:46702/Home/Login",
-        url:"http://www.wesharev2.com/Home/Login",
+       // url: "http://localhost:46702/Home/PatientLogin",
+        url: "http://www.wesharev2.com/Home/Login",
         data: {
             UserName: userName,
             Password: password,
@@ -115,3 +122,4 @@ function authenticateUser(userName, password) {
     });
     return result;
 }
+
