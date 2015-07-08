@@ -13,7 +13,6 @@ app.loginView = kendo.observable({
                 if (error.message) {
                     alert(error.message);
                 }
-
                 return false;
             }
 
@@ -98,7 +97,8 @@ function authenticateUser(userName, password) {
     var result = false;
     $.ajax({
         async: false,
-        url: "http://localhost:46702/Home/Login",
+        //url: "http://localhost:46702/Home/Login",
+        url:"http://www.wesharev2.com/Home/Login",
         data: {
             UserName: userName,
             Password: password,
