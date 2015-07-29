@@ -104,7 +104,7 @@ function AuthenticateUser(userName, password) {
     var result = false;
     $.ajax({
         async: false,
-       // url: "http://localhost:46702/Home/PatientLogin",
+        //url: "http://localhost:46702/Home/PatientLogin",
         url: "http://www.wesharev2.com/Home/Login",
         data: {
             UserName: userName,
