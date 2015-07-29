@@ -5,7 +5,7 @@ var globalmodel = kendo.observable({
 });
 
 app.loginView = kendo.observable({
-    onShow: function () {}
+    onShow: function () { }
 });
 (function (parent) {
     var provider = app.data.defaultProvider,
@@ -96,6 +96,10 @@ app.loginView = kendo.observable({
     parent.set('loginViewModel', loginViewModel);
     parent.set('onShow', function () {
         provider.Users.currentUser().then(successHandler, init);
+        //alert('dd');
+        
+        //var db = window.openDatabase("test", "1.0", "Test DB", 1000000);
+        //alert(db);
     });
 })(app.loginView);
 
