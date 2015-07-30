@@ -15,3 +15,22 @@ function successCB() {
 
 var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
 db.transaction(populateDB, errorCB, successCB);
+
+
+var dataSource = new kendo.data.DataSource({
+    offlineStorage: "products-offline",
+    transport: {
+        read: {
+            url: "http://www.wesharev2.com/Home/Login",
+            type: "json"
+        }
+    }
+});
+
+alert(dataSource.data);
+
+
+var name = window.localStorage.getItem("name");
+alert(name)
+window.localStorage.setItem("name", "fayaz");
+
